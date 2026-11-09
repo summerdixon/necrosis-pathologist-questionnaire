@@ -1,0 +1,20 @@
+[
+  {
+    "artifacts": "1",
+    "nuclear": "3",
+    "cytoplasmic": "2",
+    "extracellular": "4",
+    "ratio": "1",
+    "diagnostic": "1",
+    "comments": ""
+  },
+  {
+    "artifacts": null,
+    "nuclear": null,
+    "cytoplasmic": null,
+    "extracellular": null,
+    "ratio": null,
+    "diagnostic": null,
+    "comments": ""
+  }
+]

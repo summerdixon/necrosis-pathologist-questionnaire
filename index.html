@@ -8,68 +8,89 @@
 </head>
 <body>
     <div id="app">
-        <header>
-            <h1>Necrosis Pathologist Questionnaire</h1>
-        </header>
-
         <main>
-            <div id="question">
-                <h2 id="question-title">Question 1</h2>
-                <img id="question-image" src="images/img_1.jpeg">
+            <div id="intro" class="content-box">
+                <h1>Welcome Page Text</h1>
+                <p>placeholder paragraph text</p>
+                <button id="proceed-button" onclick="switchDiv('question')">Proceed to questions</button>
+            </div>
+            <div id="question" class="container content-box hidden">
+                <div>
+                    <h1>UCLA Lunge H&E Questionnaire</h1>
+                    <h2 id="question-title">Image 1</h2>
+                    <img id="question-image" src="images/img_1.jpeg">
+                </div>
                 <div id="question-fields">
-                    <form id="questionForm">
-                        <p>Existence of Staining Artifacts</p>
-                        <input type="radio" id="artifacts1" name="artifacts" value="1">
-                        <label for="artifacts1">1</label><br>
-                        <input type="radio" id="artifacts2" name="artifacts" value="2">
-                        <label for="artifacts2">2</label><br>
-                        <input type="radio" id="artifacts3" name="artifacts" value="3">
-                        <label for="artifacts3">3</label><br>
-                        <input type="radio" id="artifacts4" name="artifacts" value="4">
-                        <label for="artifacts4">4</label><br>
-                        <p>Extracellular Detail</p>
-                        <input type="radio" id="extracellular1" name="extracellular" value="1">
-                        <label for="extracellular1">1</label><br>
-                        <input type="radio" id="extracellular2" name="extracellular" value="2">
-                        <label for="extracellular2">2</label><br>
-                        <input type="radio" id="extracellular3" name="extracellular" value="3">
-                        <label for="extracellular3">3</label><br>
-                        <input type="radio" id="extracellular4" name="extracellular" value="4">
-                        <label for="extracellular4">4</label><br>
-                        <p>Cytoplasmic Detail</p>
-                        <input type="radio" id="cytoplasmic1" name="cytoplasmic" value="1">
-                        <label for="cytoplasmic1">1</label><br>
-                        <input type="radio" id="cytoplasmic2" name="cytoplasmic" value="2">
-                        <label for="cytoplasmic2">2</label><br>
-                        <input type="radio" id="cytoplasmic3" name="cytoplasmic" value="3">
-                        <label for="cytoplasmic3">3</label><br>
-                        <input type="radio" id="cytoplasmic4" name="cytoplasmic" value="4">
-                        <label for="cytoplasmic4">4</label><br>
-                        <p>Nuclear Detail</p>
-                        <input type="radio" id="nuclear1" name="nuclear" value="1">
-                        <label for="nuclear1">1</label><br>
-                        <input type="radio" id="nuclear2" name="nuclear" value="2">
-                        <label for="nuclear2">2</label><br>
-                        <input type="radio" id="nuclear3" name="nuclear" value="3">
-                        <label for="nuclear3">3</label><br>
-                        <input type="radio" id="nuclear4" name="nuclear" value="4">
-                        <label for="nuclear4">4</label><br>
-                        <p>Cellularity</p>
-                        <input type="radio" id="cellularity1" name="cellularity" value="1">
-                        <label for="cellularity1">1</label><br>
-                        <input type="radio" id="cellularity2" name="cellularity" value="2">
-                        <label for="cellularity2">2</label><br>
-                        <input type="radio" id="cellularity3" name="cellularity" value="3">
-                        <label for="cellularity3">3</label><br>
-                        <input type="radio" id="cellularity4" name="cellularity" value="4">
-                        <label for="cellularity4">4</label><br>
+                    <form id="question-form" class="question-form">
 
-                        <div id="buttons">
-                            <button type="next" id="previous-button">Previous</button>
+                        <div id="radio">
+                            <p>How would you rate the image quality with respect to staining artifacts?</p>
+                            <input type="radio" id="artifacts1" name="artifacts" value="1">
+                            <label for="artifacts1">1 free of artifacts</label><br>
+                            <input type="radio" id="artifacts2" name="artifacts" value="2">
+                            <label for="artifacts2">2 acceptable</label><br>
+                            <input type="radio" id="artifacts3" name="artifacts" value="3">
+                            <label for="artifacts3">3 many artifacts</label><br>
+
+                            <p>How would you rate the clarity of nuclear detail?</p>
+                            <input type="radio" id="nuclear4" name="nuclear" value="4">
+                            <label for="nuclear4">4 perfect</label><br>
+                            <input type="radio" id="nuclear3" name="nuclear" value="3">
+                            <label for="nuclear3">3 very good</label><br>
+                            <input type="radio" id="nuclear2" name="nuclear" value="2">
+                            <label for="nuclear2">2 acceptable</label><br>
+                            <input type="radio" id="nuclear1" name="nuclear" value="1">
+                            <label for="nuclear1">1 unacceptable</label><br>
+
+                            <p>How would you rate the clarity of cytoplasmic detail?</p>
+                            <input type="radio" id="cytoplasmic4" name="cytoplasmic" value="4">
+                            <label for="cytoplasmic4">4 perfect</label><br>
+                            <input type="radio" id="cytoplasmic3" name="cytoplasmic" value="3">
+                            <label for="cytoplasmic3">3 very good</label><br>
+                            <input type="radio" id="cytoplasmic2" name="cytoplasmic" value="2">
+                            <label for="cytoplasmic2">2 acceptable</label><br>
+                            <input type="radio" id="cytoplasmic1" name="cytoplasmic" value="1">
+                            <label for="cytoplasmic1">1 unacceptable</label><br>
+
+                            <p>How would you rate the clarity of extracellular detail?</p>
+                            <input type="radio" id="extracellular4" name="extracellular" value="4">
+                            <label for="extracellular4">4 perfect</label><br>
+                            <input type="radio" id="extracellular3" name="extracellular" value="3">
+                            <label for="extracellular3">3 very good</label><br>
+                            <input type="radio" id="extracellular2" name="extracellular" value="2">
+                            <label for="extracellular2">2 acceptable</label><br>
+                            <input type="radio" id="extracellular1" name="extracellular" value="1">
+                            <label for="extracellular1">1 unacceptable</label><br>
+
+                            <p>What is the ratio of stained to unstained cells in this image?</p>
+                            <input type="radio" id="ratio3" name="ratio" value="3">
+                            <label for="ratio3">Most cells are stained</label><br>
+                            <input type="radio" id="ratio2" name="ratio" value="2">
+                            <label for="ratio2">Similar numbers of stained and unstained cells</label><br>
+                            <input type="radio" id="ratio1" name="ratio" value="1">
+                            <label for="ratio1">Most cells are unstained</label><br>
+
+                            <p>Overall diagnostic adequacy</p>
+                            <input type="radio" id="diagnostic4" name="diagnostic" value="4">
+                            <label for="diagnostic4">3 optimal</label><br>
+                            <input type="radio" id="diagnostic3" name="diagnostic" value="3">
+                            <label for="diagnostic3">2 adequate</label><br>
+                            <input type="radio" id="diagnostic2" name="diagnostic" value="2">
+                            <label for="diagnostic2">1 suboptimal</label><br>
+                            <input type="radio" id="diagnostic1" name="diagnostic" value="1">
+                            <label for="diagnostic1">0 non-diagnostic</label><br>
+
+                            <p>Comments (optional)</p>
+                            <input type="text" id="comments" name="comments">
+                        </div>
+
+                        <div id="buttons" class="buttons">
+                            <button type="button" id="previous-button">Previous</button>
                             <button type="submit" id="next-button">Next</button>
-                            <button type="button" id="save-button">Save Progress to a CSV</button>
                         </div>
                     </form>
+                    <button type="button" id="folder-button">Choose Save Folder</button>
+                    <button id="save-button">Save Progress to a CSV</button>
                 </div>
             </div>
         </main>
