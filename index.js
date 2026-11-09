@@ -47,14 +47,33 @@ function goToNext() {
         id++;
         updateQuestion();
     }
+    if (id == 2) {
+        const previousButton = document.getElementById('previous-button');
+        previousButton.classList.remove('hidden');
+    }
+    if (id == MAX_ID) {
+        const saveButton = document.getElementById('save-button');
+        saveButton.classList.remove('hidden');
+        const nextButton = document.getElementById('next-button');
+        nextButton.classList.add('hidden');
+    }
 }
 
 function goToPrevious() {
-    saveCurrentScores();
-
     if (id > 1) {
+        saveCurrentScores();
         id--;
         updateQuestion();
+    }
+    if (id == 1) {
+        const previousButton = document.getElementById('previous-button');
+        previousButton.classList.add('hidden');
+    }
+    if (id == MAX_ID-1) {
+        const saveButton = document.getElementById('save-button');
+        saveButton.classList.add('hidden');
+        const nextButton = document.getElementById('next-button');
+        nextButton.classList.remove('hidden');
     }
 }
 
@@ -141,13 +160,14 @@ async function pickFolder() {
         const dirHandle = await window.showDirectoryPicker({ mode: "readwrite" });
         fileHandle = await dirHandle.getFileHandle("pathology_scores.json", { create: true });
 
-        // Resume from an existing file if there is one
         const text = await (await fileHandle.getFile()).text();
         if (text.trim()) {
             globalScores = JSON.parse(text);
             restoreScores();
         }
         await writeJSON();
+        const proceedButton = document.getElementById('proceed-button');
+        proceedButton.disabled = false;
     } catch (err) {
         console.error("Folder selection failed:", err);
     }

@@ -12,7 +12,8 @@
             <div id="intro" class="content-box">
                 <h1>Welcome Page Text</h1>
                 <p>placeholder paragraph text</p>
-                <button id="proceed-button" onclick="switchDiv('question')">Proceed to questions</button>
+                <button type="button" id="folder-button">Choose Save Folder</button>
+                <button id="proceed-button" disabled onclick="switchDiv('question')">Proceed to questions</button>
             </div>
             <div id="question" class="container content-box hidden">
                 <div>
@@ -81,16 +82,15 @@
                             <label for="diagnostic1">0 non-diagnostic</label><br>
 
                             <p>Comments (optional)</p>
-                            <input type="text" id="comments" name="comments">
+                            <input type="text" id="comments" name="comments" class="comments">
                         </div>
 
                         <div id="buttons" class="buttons">
-                            <button type="button" id="previous-button">Previous</button>
+                            <button type="button" id="previous-button" class="hidden">Previous</button>
                             <button type="submit" id="next-button">Next</button>
+                            <button id="save-button" class="hidden save-button">Save to a CSV</button>
                         </div>
                     </form>
-                    <button type="button" id="folder-button">Choose Save Folder</button>
-                    <button id="save-button">Save Progress to a CSV</button>
                 </div>
             </div>
         </main>

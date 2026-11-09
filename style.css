@@ -6,6 +6,29 @@ h1 {
     color: #2774AE;
 }
 
+button {
+    background-color: #2774AE;
+    color: white;
+    border: #2774AE 1px solid;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    background-color: gray;
+    border: gray 1px solid;
+}
+
+.save-button {
+    background-color: #003B5C;
+    border: #003B5C 1px solid;
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -29,4 +52,9 @@ h1 {
 
 .hidden {
       display: none;
+}
+
+.comments {
+    width: 100%;
+    box-sizing: border-box;
 }
